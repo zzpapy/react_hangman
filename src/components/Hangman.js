@@ -9,7 +9,7 @@ import step3 from "./images/3.jpg";
 import step4 from "./images/4.jpg";
 import step5 from "./images/5.jpg";
 import step6 from "./images/6.jpg";
-
+const test ="programming_languages"
 class Hangman extends Component {
   static defaultProps = {
     maxWrong: 6,
@@ -21,7 +21,7 @@ class Hangman extends Component {
     this.state = {
       mistake: 0,
       guessed: new Set([]),
-      answer: randomWord()
+      answer: randomWord(test)
     }
   }
 
@@ -40,7 +40,7 @@ class Hangman extends Component {
   generateButtons() {
     return "abcdefghjklmnopqrstuvwxyz".split("").map(letter => (
       <button
-        class='btn btn-lg btn-primary m-2'
+        className='btn btn-lg btn-primary m-2'
         key={letter}
         value={letter}
         onClick={this.handleGuess}
@@ -55,7 +55,7 @@ class Hangman extends Component {
     this.setState({
       mistake: 0,
       guessed: new Set([]),
-      answer: randomWord()
+      answer: randomWord(test)
     });
   }
 
@@ -72,6 +72,7 @@ class Hangman extends Component {
       gameStat = "You Lost!!!"
     }
 
+    console.log(this.state.answer)
     return (
       <div className="Hangman container">
         <h1 className='text-center'>Hangman</h1>

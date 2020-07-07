@@ -15,9 +15,16 @@ var programming_languages = [
   "ruby",
   "fortran"
 ]
-
-function randomWord() {
-  return programming_languages[Math.floor(Math.random() * programming_languages.length)]
+var test = [
+	"toto",
+	"tata",
+	"titi"
+]
+function randomWord(tab) {
+	console.log(tab)
+	tab = tab.replace('"','')
+	console.log(tab)
+  return tab[Math.floor(Math.random() * tab.length)]
 }
 
 export { randomWord }
